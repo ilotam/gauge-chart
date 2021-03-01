@@ -1,6 +1,8 @@
 # Gauge Chart
 A Gauge Chart for DataStudio.
 
+![image](https://user-images.githubusercontent.com/47331711/109511524-6a808e80-7aa3-11eb-9b5d-f053091e75d8.png)
+
 # Published version
 The published version of this visualization is deployed at:
 
