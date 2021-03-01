@@ -1,2 +1,18 @@
-# gauge-chart
-gauge chart for DataStudio
+# Gauge Chart
+A Gauge Chart for DataStudio.
+
+# Published version
+The published version of this visualization is deployed at:
+
+gs://smart_city_bucket/gauge
+
+An example of this visualization can be seen [here](https://datastudio.google.com/reporting/65b49cca-515c-43c0-87f8-c9f34a69ca82).
+
+# Usage
+
+In order to use this chart you will need to have a data source that has column with speed data, for example like [this](https://docs.google.com/spreadsheets/d/1qJ6Evp-YSsnz8jdIfYej9nfKLzVvGvrAOxPlfPRC-WI/edit?usp=sharing).
+
+You'll have to use this column as Metric
+
+![image](https://user-images.githubusercontent.com/47331711/109510547-6f910e00-7aa2-11eb-860c-66475f884b83.png)
+
