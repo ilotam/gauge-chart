@@ -18,3 +18,8 @@ You'll have to use this column as Metric
 
 ![image](https://user-images.githubusercontent.com/47331711/109510547-6f910e00-7aa2-11eb-860c-66475f884b83.png)
 
+# Logo
+
+![gauge](https://user-images.githubusercontent.com/47331711/111777368-7d70cc80-88b3-11eb-84c7-0702b9846c78.png)
+
+
