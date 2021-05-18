@@ -1,7 +1,7 @@
 {
   "dsccViz": {
-    "gcsDevBucket": "gs://smart_city_bucket/speedotest2/test_dev",
-    "gcsProdBucket": "gs://smart_city_bucket/speedotest2/test_prod",
+    "gcsDevBucket": "gs://smart_city_bucket/gauge/dev",
+    "gcsProdBucket": "gs://smart_city_bucket/gauge/prod",
     "jsFile": "index.js",
     "jsonFile": "index.json",
     "cssFile": "index.css",

@@ -1,23 +1,23 @@
 {
-  "name": "My Visualizations",
-  "organization": "MyOrg",
-  "description": "My first visualization package.",
-  "logoUrl": "https://logo",
+  "name": "Gauge Chart",
+  "organization": "Tamás Ilosvay",
+  "description": "Gauge chart to show the avarage of your values. You will need a dataset with one numeric value column used as metric. ",
+  "logoUrl": "https://user-images.githubusercontent.com/47331711/111777368-7d70cc80-88b3-11eb-84c7-0702b9846c78.png",
   "organizationUrl": "https://url",
-  "supportUrl": "https://url",
+  "supportUrl": "https://github.com/ilotam/gauge-chart",
   "privacyPolicyUrl": "https://url",
   "termsOfServiceUrl": "https://url",
-  "packageUrl": "https://url",
+  "packageUrl": "https://github.com/ilotam/gauge-chart",
   "devMode": false,
   "components": [
     {
-      "name": "myViz",
-      "description": "My first Community Visualization",
-      "iconUrl": "https://url",
+      "name": "Gauge Chart",
+      "description": "Gauge Chart",
+      "iconUrl": "https://user-images.githubusercontent.com/47331711/111777368-7d70cc80-88b3-11eb-84c7-0702b9846c78.png",
       "resource": {
-        "js": "gs://smart_city_bucket/speedotest2/test_prod/index.js",
-        "config": "gs://smart_city_bucket/speedotest2/test_prod/index.json",
-        "css": "gs://smart_city_bucket/speedotest2/test_prod/index.css"
+        "js": "gs://smart_city_bucket/gauge/prod/index.js",
+        "config": "gs://smart_city_bucket/gauge/prod/index.json",
+        "css": "gs://smart_city_bucket/gauge/prod/index.css"
       }
     }
   ]

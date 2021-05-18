@@ -3,58 +3,26 @@ export const message = {
     "DEFAULT": [
       {
         "dimension": [
-          3
+          "20200818010001"
         ],
         "metric": [
-          52
+          42
         ]
       },
       {
         "dimension": [
-          1
+          "20200818000000"
         ],
         "metric": [
-          50
+          40
         ]
       },
       {
         "dimension": [
-          5
+          "20200818020004"
         ],
         "metric": [
-          49
-        ]
-      },
-      {
-        "dimension": [
-          2
-        ],
-        "metric": [
-          48
-        ]
-      },
-      {
-        "dimension": [
-          4
-        ],
-        "metric": [
-          43
-        ]
-      },
-      {
-        "dimension": [
-          6
-        ],
-        "metric": [
-          22
-        ]
-      },
-      {
-        "dimension": [
-          7
-        ],
-        "metric": [
-          2
+          9
         ]
       }
     ]
@@ -62,16 +30,16 @@ export const message = {
   "fields": {
     "dimension": [
       {
-        "id": "qt_7xgmuvtmcc",
-        "name": "Car ID",
-        "type": "NUMBER",
+        "id": "qt_cacfok01hc",
+        "name": "Dátum",
+        "type": "YEAR_MONTH_DAY_SECOND",
         "concept": "DIMENSION"
       }
     ],
     "metric": [
       {
-        "id": "qt_yp22jvtmcc",
-        "name": "avg_speed",
+        "id": "qt_1eajmk01hc",
+        "name": "Irány 1 - Autók sebessége",
         "type": "NUMBER",
         "concept": "METRIC"
       }
@@ -86,14 +54,11 @@ export const message = {
         "color": "#56c2b0"
       }
     },
-    "maxRange": {
-      "value": 80,
-      "defaultValue": 80
-    }
+    "maxRange": {}
   },
   "theme": {
     "themeFillColor": {
-      "color": "#ffffff",
+      "color": "#1e88e5",
       "themeRef": {
         "index": 0
       }
@@ -106,13 +71,13 @@ export const message = {
     },
     "themeFontFamily": "Roboto",
     "themeAccentFillColor": {
-      "color": "#e0e0e0",
+      "color": "#d9d9d9",
       "themeRef": {
         "index": 2
       }
     },
     "themeAccentFontColor": {
-      "color": "#000000",
+      "color": "#434343",
       "themeRef": {
         "index": 3
       }
@@ -204,68 +169,68 @@ export const message = {
         }
       },
       {
-        "color": "#f15a60",
+        "color": "#F15A60",
         "seriesRef": {
           "index": 11
         }
       },
       {
-        "color": "#7ac36a",
+        "color": "#7AC36A",
         "seriesRef": {
           "index": 12
         }
       },
       {
-        "color": "#5a9bd4",
+        "color": "#5A9BD4",
         "seriesRef": {
           "index": 13
         }
       },
       {
-        "color": "#faa75a",
+        "color": "#FAA75A",
         "seriesRef": {
           "index": 14
         }
       },
       {
-        "color": "#9e67ab",
+        "color": "#9E67AB",
         "seriesRef": {
           "index": 15
         }
       },
       {
-        "color": "#ce7058",
+        "color": "#CE7058",
         "seriesRef": {
           "index": 16
         }
       },
       {
-        "color": "#d77fb3",
+        "color": "#D77FB3",
         "seriesRef": {
           "index": 17
         }
       },
       {
-        "color": "#81d4fa",
+        "color": "#81D4FA",
         "seriesRef": {
           "index": 18
         }
       },
       {
-        "color": "#f48fb1",
+        "color": "#F48FB1",
         "seriesRef": {
           "index": 19
         }
       }
     ],
     "themeIncreaseColor": {
-      "color": "#388e3c"
+      "color": "#2E7D32"
     },
     "themeDecreaseColor": {
-      "color": "#f44336"
+      "color": "#D32F2F"
     },
     "themeGridColor": {
-      "color": "#d1d1d1"
+      "color": "#e0e0e0"
     }
   },
   "interactions": {}

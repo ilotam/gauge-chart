@@ -9,7 +9,7 @@
           "label": "Dimensions",
           "type": "DIMENSION",
           "options": {
-            "min": 1,
+            "min": 0,
             "max": 1
           }
         },
@@ -28,11 +28,11 @@
   "style": [
     {
       "id": "barStyling",
-      "label": "Bar Styles",
+      "label": "Background color",
       "elements": [
         {
           "id": "barColor",
-          "label": "Bar Color",
+          "label": "Background color",
           "type": "FILL_COLOR",
           "defaultValue": {
             "color": "#56c2b0"
@@ -42,7 +42,7 @@
     },
     {
       "id": "rangeInterval",
-      "label": "Range Interval",
+      "label": "Set Range",
       "elements": [
     
         {

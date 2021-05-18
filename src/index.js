@@ -2,6 +2,23 @@ const d3 = require('d3');
 const dscc = require('@google/dscc');
 const local = require('./localMessage.js');
 
+
+function getAvarageSpeed(speedCount, allCars){
+   return speedCount / allCars;
+}
+
+function getDegree(avgSpeed, maxRange){
+    var degree = 0;
+    if(avgSpeed <= (maxRange * (5/6))){
+        degree = 225-(avgSpeed/0.01)*(45/ ((maxRange*(1/6))/0.01));
+    }else if (avgSpeed <= maxRange - 0.02){
+        degree = 360+ (225-(avgSpeed/0.01)*(45/ ((maxRange*(1/6))/0.01)));
+    }else {
+        degree = 315;
+    }
+    return degree;
+}
+
 // change this to 'true' for local development
 // change this to 'false' before deploying
 export const LOCAL = false;
@@ -55,9 +72,14 @@ const drawViz = message => {
       let maxRange =  message.style.maxRange.value
      ? message.style.maxRange.value
       : message.style.maxRange.defaultValue;
-    console.log(message.style["maxRange"].defaultValue);
+    //console.log("maxrange:" + message.style["maxRange"].defaultValue);
+
+    maxRange = styleVal(message, "maxRange")
+
+    //console.log("maxrange: " + maxRange);
     let circleColor = styleVal(message, "barColor");
     //adatok begyűjtése
+    
 
     let speed = 0;
     tblList.forEach(function(row) {
@@ -65,34 +87,26 @@ const drawViz = message => {
         speedCount = speedCount+ parseInt(speed);
         allCars ++;
     });
-    
+
     
     //Átlagsebesség
-    avgSpeed  = speedCount / allCars;
+
+    //avgSpeed  = speedCount / allCars;
+    avgSpeed = getAvarageSpeed(speedCount,allCars);
+    //console.log(avgSpeed);
     var degree = 0;
  
+    maxRange = 80;
     //A point at angle theta on the circle whose centre is (x0,y0) and whose radius is r is (x0 + r cos theta, y0 + r sin theta). 
     //Now choose theta values evenly spaced between 0 and 2pi.     
 
-    if(avgSpeed <= (maxRange * (5/6))){
-        degree = 225-(avgSpeed/0.01)*(45/ ((maxRange*(1/6))/0.01));
-    }else if (avgSpeed <= maxRange - 0.02){
-        degree = 360+ (225-(avgSpeed/0.01)*(45/ ((maxRange*(1/6))/0.01)));
-    }else {
-        degree = 315;
-    }
-    
-    console.log(degree);
+    degree = getDegree(avgSpeed, maxRange);
+    //console.log(degree);
     var pi = Math.PI;
- 
     var rad = (degree * (pi / 180));
-    //var r = 69.04708538;
     var r = 63.96;
     var pos1 = (100+r*Math.cos(rad));
     var pos2 = (100+r*Math.sin(rad));
-    console.log(pos1);
-    console.log(pos2);
-    console.log(rad);
 
     if((degree > 180 && degree < 270) || (degree >= 315 && degree < 360)){
         pos2 = 200-pos2;
@@ -135,15 +149,6 @@ const drawViz = message => {
                     return [x(d.x),y(d.y)].join(",");
                 }).join(" ");
             });
-
-    //  svgContainer.append("g")
-    // .attr("transform", "translate(0," + height + ")")
-    //.call(d3.axisBottom(x));
-
-    // add the Y Axis
-    //svgContainer.append("g")
-    // .call(d3.axisLeft(y));
-          
 
     //Draw the line
     var line = svgContainer.append("line")
@@ -193,7 +198,7 @@ const drawViz = message => {
                 .attr("font-family","sans-serif")
                 .attr("font-size",textSize)
                 .attr("text-anchor", "middle")                   
-                .text(avgSpeed);
+                .text(Math.round(avgSpeed));
 
 
     var line0 = svgContainer.append("line")
@@ -410,7 +415,7 @@ const drawViz = message => {
             .attr("font-family","sans-serif")
             .attr("font-size",textSize)
             .attr("text-anchor", "left")
-            .text(maxRange*(3/24));
+            .text(Math.round(maxRange*(3/24)));
     
     var text20 = svgContainer.append("text");
     text20.attr("x",16.96)
@@ -418,7 +423,7 @@ const drawViz = message => {
             .attr("font-family","sans-serif")
             .attr("font-size",textSize)
             .attr("text-anchor", "start")
-            .text(maxRange*(6/24));
+            .text(Math.round(maxRange*(6/24)));
 
     var text30 = svgContainer.append("text");
     text30.attr("x",45.53)
@@ -426,7 +431,7 @@ const drawViz = message => {
             .attr("font-family","sans-serif")
             .attr("font-size",textSize)
             .attr("text-anchor", "start")
-            .text(maxRange*(9/24));
+            .text(Math.round((maxRange*(9/24))));
 
     var text40 = svgContainer.append("text");
     text40.attr("x",100)
@@ -434,7 +439,7 @@ const drawViz = message => {
         .attr("font-family","sans-serif")
         .attr("font-size",textSize)
         .attr("text-anchor", "middle")
-        .text(maxRange*(12/24));
+        .text(Math.round(maxRange*(12/24)));
 
     var text50 = svgContainer.append("text");
     text50.attr("x",151.47)
@@ -442,7 +447,7 @@ const drawViz = message => {
         .attr("font-family","sans-serif")
         .attr("font-size",textSize)
         .attr("text-anchor", "end")
-        .text(maxRange*(15/24));
+        .text(Math.round(maxRange*(15/24)));
 
     var text60 = svgContainer.append("text");
     text60.attr("x",183.08)
@@ -450,7 +455,7 @@ const drawViz = message => {
         .attr("font-family","sans-serif")
         .attr("font-size",textSize)
         .attr("text-anchor", "end")
-        .text(maxRange*(18/24));
+        .text(Math.round(maxRange*(18/24)));
 
     var text70 = svgContainer.append("text");
     text70.attr("x",187)
@@ -458,7 +463,7 @@ const drawViz = message => {
         .attr("font-family","sans-serif")
         .attr("font-size",textSize)
         .attr("text-anchor", "end")
-        .text(maxRange*(21/24));
+        .text(Math.round(maxRange*(21/24)));
 
     var text80 = svgContainer.append("text");
     text80.attr("x",161.71)
@@ -466,7 +471,7 @@ const drawViz = message => {
         .attr("font-family","sans-serif")
         .attr("font-size",textSize)
         .attr("text-anchor", "end")
-        .text(maxRange);
+        .text(Math.round(maxRange));
 
 };
 //document.body.appendChild(svg);
